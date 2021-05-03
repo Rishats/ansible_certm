@@ -8,6 +8,5 @@ Playbooks for usage example:
 
 Vagrantfile:
 =========
-1) By default Vagrantfile create 4 VMs based on Centos 7.
-``` ```
+1) By default Vagrantfile create 4 VMs based on Centos 8.
 
