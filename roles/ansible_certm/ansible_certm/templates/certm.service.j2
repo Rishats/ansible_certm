@@ -1,0 +1,38 @@
+{{ ansible_managed | comment }}
+
+[Unit]
+Description=CERTM - agent for HAProxy working with SSL across all nodes.
+Documentation=https://github.com/Rishats/certm
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+WorkingDirectory=/usr/local/
+
+User={{ certm_user }}
+Group={{ certm_group }}
+
+PermissionsStartOnly=true
+
+EnvironmentFile={{ certm_server_envfile }}
+
+ExecStart={{ certm_client_bin }}/certm start --transfer
+
+# Let systemd always restart this service, in limits defined by StartLimitIntervalSec and StartLimitBurst.
+Restart=always
+
+StandardOutput=journal
+StandardError=inherit
+
+# Disable timeout logic and wait until process is stopped
+TimeoutStopSec=0
+
+# SIGTERM signal is used to stop certm
+KillSignal=SIGTERM
+
+SendSIGKILL=no
+
+SuccessExitStatus=0
+
+[Install]
+WantedBy=multi-user.target

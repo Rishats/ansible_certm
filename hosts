@@ -1,0 +1,4 @@
+
+[all]
+nlb01 ansible_ssh_port=22
+nlb02 ansible_ssh_port=22

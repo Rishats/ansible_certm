@@ -1,0 +1,23 @@
+---
+# CERTM binaries path
+certm_client_bin: /usr/local/bin
+
+certm_domain_name: "example.com"
+certm_email: "rishat@example.com"
+certm_haproxy_certs_location: "/etc/haproxy/ssl"
+certm_letsencrypt_certs_location: "/etc/letsencrypt/live"
+certm_certbot_port: "9080"
+certm_s3_endpoint: "your_endpoint"
+certm_s3_bucket_name: "certm"
+certm_a3_access_key: "your_key"
+certm_s3_private_key: "your_private_key"
+
+# CERTM release to install. default if lastet
+certm_client_release: ""
+
+# Runtime user and group for the CERTM service
+certm_user: certm
+certm_group: certm
+
+# Path to the file containing the ENV variables for the Certm server
+certm_server_envfile: /etc/default/certm

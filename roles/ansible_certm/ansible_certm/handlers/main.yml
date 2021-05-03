@@ -1,0 +1,21 @@
+---
+
+- name: reload certm systemd
+  systemd:
+    name: certm
+    daemon_reload: True
+
+- name: restart certm
+  service:
+    name: certm
+    state: restarted
+
+- name: reload certm-sync systemd
+  systemd:
+    name: certm-sync
+    daemon_reload: True
+
+- name: restart certm-sync
+  service:
+    name: certm-sync
+    state: restarted
