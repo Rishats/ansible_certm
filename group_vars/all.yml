@@ -9,7 +9,7 @@ certm_letsencrypt_certs_location: "/etc/letsencrypt/live"
 certm_certbot_port: "9080"
 certm_s3_endpoint: "your_endpoint"
 certm_s3_bucket_name: "certm"
-certm_a3_access_key: "your_key"
+certm_s3_access_key: "your_key"
 certm_s3_private_key: "your_private_key"
 
 # CERTM release to install. default if lastet
